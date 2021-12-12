@@ -34,10 +34,8 @@
 
 ### My profile picture
 
-<img align="left" alt="Instagram.com" width="100px" src="https://scontent.fsgn2-1.fna.fbcdn.net/v/t1.6435-9/143155621_1028384280984010_4663019982890050165_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=twadMo1XLVwAX-RlatX&tn=RmmyQqRd5RMc1rf1&_nc_ht=scontent.fsgn2-1.fna&oh=00_AT-l7qYQ2_tfTOlykVFyqeBZ3uDD1GOBWgXA23IJ9JqFxg&oe=61DAFED2" />
-<img align="left" alt="Instagram.com" width="150px" src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.6435-9/134831605_1011100736045698_7464906162397042629_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=JYTTUERsKpUAX-IH2dZ&_nc_ht=scontent.fsgn2-6.fna&oh=d8571ca18081805e48e8cb4830470c77&oe=61DBD8EA" />
-<img align="left" alt="Instagram.com" width="130px" src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t1.6435-9/132543879_1006507906504981_8399534342905395034_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=y2dBTbpwhgwAX8Yn-yq&_nc_ht=scontent.fsgn2-5.fna&oh=00_AT8NfT62S_Tz8R1wlycf253WcNNvwhcRl5JsBy4JePrF0A&oe=61D9D799" />
-<img align="left" alt="Instagram.com" width="150px" src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t1.6435-9/124583308_973967353092370_3476594151153774672_n.jpg?_nc_cat=101&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=fGIUAskgnvwAX8NuMRj&_nc_ht=scontent.fsgn2-4.fna&oh=771665834ee9d1dabe5eb10d7d502979&oe=61DA19FC" />
+<img align="left" alt="Instagram.com" width="350px" src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t1.6435-9/134831605_1011100736045698_7464906162397042629_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=JYTTUERsKpUAX-IH2dZ&_nc_ht=scontent.fsgn2-6.fna&oh=d8571ca18081805e48e8cb4830470c77&oe=61DBD8EA" />
+
 
 </details>
 
