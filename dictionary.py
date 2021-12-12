@@ -1,6 +1,7 @@
 
 from tkinter import *
 import tkinter 
+from tkinter.ttk import Combobox
 from PIL import Image,ImageTk
 from googletrans import Translator
 from playsound import playsound
@@ -14,6 +15,7 @@ import time
 
 def exit_time():
     exit()
+r= sr.Recognizer()
 
 class Example(Frame):
     def __init__(self,parent):
@@ -90,6 +92,9 @@ exchange_load = ImageTk.PhotoImage(exchange)
 sound = Image.open("sound.png")
 sound_load = ImageTk.PhotoImage(sound)
 
+mic = Image.open("mic.png")
+mic_load = ImageTk.PhotoImage(mic)
+
 trans = Translator()
 engine = pyttsx3.init()
 
@@ -97,7 +102,6 @@ engine = pyttsx3.init()
 def new_screen():
 
     def speak_action():
-        r= sr.Recognizer()
 
         def speak(text):
             tts =gTTS(text=text, lang='vi')
@@ -125,7 +129,7 @@ def new_screen():
             speak(robot_brain)
         elif "ngày" in you:
             today = date.today()
-            robot_brain = today.strftime("Hôm nay là ngày %d %m %Y")    
+            robot_brain = today.strftime("Hôm nay là ngày %d tháng %m  năm %Y")    
             hai_box.insert("1.0",str(robot_brain))
             speak(robot_brain)
         elif "giờ" in you:
@@ -134,14 +138,14 @@ def new_screen():
             robot_brain = time.strftime(str(my_format), my_time)
             hai_box.insert("1.0",str(robot_brain))
             speak(robot_brain)
+        elif "tạm" in you:
+            robot_brain = "Tạm biệt bạn"
+            hai_box.insert("1.0",robot_brain)
+            speak(robot_brain)
         elif you:
             wikipedia.set_lang("vi")
             robot_brain=wikipedia.summary(you,sentences =1)
             hai_box.insert("1.0",str(robot_brain))
-            speak(robot_brain)
-        elif "tạm" in you:
-            robot_brain = "Tạm biệt bạn"
-            hai_box.insert("1.0",robot_brain)
             speak(robot_brain)
         else:
             robot_brain = "Bạn có thể nói lại không tui chưa nghe rõ"
@@ -236,6 +240,17 @@ def en_vi():
             playsound("translate.mp3")
             os.remove("translate.mp3")
 
+        def vi_mic_action():
+            with sr.Microphone() as source:
+                audio_data = r.record(source, duration =5)
+            
+            try:
+                you = r.recognize_google(audio_data, language = "vi")
+                input_box.insert("1.0",you)
+                translate_new()
+            except:
+                you=""
+
         screen_en_vi.bind("<Return>",enter_button_new)
 
         title_vi_en = Label(text="Hai Translator",font=(("Arial"),55),bg="#F0F0F0",fg="#011128")
@@ -255,6 +270,9 @@ def en_vi():
 
         change_button_back = Button(button,image=exchange_load,font=(("Arial"),10, "bold"),bg="#FFFFFF",command=back)
         change_button_back.place(x=685,y=190)
+
+        mic2 = Button(screen_en_vi,image=mic_load,font=(("Arial"),10, "bold"),bg="#FFFFFF",command=vi_mic_action)
+        mic2.place(x= 50,y =340)
 
 
     def clear_text():
@@ -303,6 +321,23 @@ def en_vi():
             playsound("translate1.mp3")
             os.remove("translate1.mp3")
 
+    def mic_action():
+        with sr.Microphone() as source:
+            audio_data = r.record(source, duration =5)
+        
+        try:
+            you = r.recognize_google(audio_data, language = "en")
+            input_box.insert("1.0",you)
+            translate()
+        except:
+            you=""
+
+    def combobox_click(event):
+        if combo.get() == "English-Vietnamese":
+            en_vi()
+        else:
+            vi_en()
+
     screen_en_vi.bind("<Return>",enter_button)
  
     title_en_vi = Label(text="Hai Translator",font=(("Arial"),55),bg="#F0F0F0",fg="#011128")
@@ -330,6 +365,18 @@ def en_vi():
 
     change_button = Button(button,image=exchange_load,font=(("Arial"),10, "bold"),bg="#FFFFFF",command=vi_en,activebackground='blue')
     change_button.place(x=685,y=190)
+
+    mic1 = Button(screen_en_vi,image=mic_load,font=(("Arial"),10, "bold"),bg="#FFFFFF",command=mic_action)
+    mic1.place(x= 50,y =340)
+
+    options = [
+        "English-Vietnamese",
+        "Vietnamese-English",
+    ]
+    combo = Combobox(screen_en_vi,values=options)
+    combo.current(0)
+    combo.place(x= 473,y=131)
+    combo.bind("<<ComboboxSelected>>",combobox_click)
 
     menu_bar = Menu(screen_en_vi,tearoff=0)
     file_menu = Menu(menu_bar,tearoff=0)
