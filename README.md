@@ -1,7 +1,5 @@
 ### Hi there, I'm Lê Thanh Hải [my facebook][website] 👋 
 
-(Lê Thanh Hải)(https://www.facebook.com/profile.php?id=100014373425372)
-
 ## I'm a student at Vietnamese-germany University!!
 
 - 🔭 I am a freshmen!
